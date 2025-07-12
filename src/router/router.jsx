@@ -14,6 +14,7 @@ import Myorder from "../pages/Home/Myorder";
 import Login from "../pages/Home/Login";
 import Register from "../pages/Home/Register";
 import UpdateFood from "../pages/Home/UpdateFood";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,31 +27,47 @@ const router = createBrowserRouter([
     },
     {
       path:"/allfoods",
-      element:<Allfoods></Allfoods>
+      element:<Allfoods></Allfoods>,
     },
     {
       path:"/singlefood",
-      element:<Singlefood></Singlefood>
+      element:<Singlefood></Singlefood>,
     },
     {
       path:"/foodpurchase",
-      element:<Foodpurchase></Foodpurchase>
+      element: (
+          <PrivateRoute>
+            <Foodpurchase />
+          </PrivateRoute>
+        ),
     },
     {
       path:"/gallery",
-      element:<Gallery></Gallery>
+      element:<Gallery></Gallery>,
     },
     {
     path:"/myfood",
-    element:<Myfood></Myfood>
+   element: (
+          <PrivateRoute>
+            <Myfood />
+          </PrivateRoute>
+        ),
     },
     {
      path:"/addfood" ,
-     element:<Addfood></Addfood>
+     element: (
+          <PrivateRoute>
+            <Addfood />
+          </PrivateRoute>
+        ),
     },
     {
       path:"/myorder",
-      element:<Myorder></Myorder>
+       element: (
+          <PrivateRoute>
+            <Myorder />
+          </PrivateRoute>
+        ),
     },
     {
       path:"/singlefood/:id",
