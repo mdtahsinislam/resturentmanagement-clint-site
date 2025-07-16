@@ -183,7 +183,11 @@ const NavBar = () => {
             <Link to="/" className="block px-2 py-1 hover:text-gray-300">Home</Link>
             <Link to="/allfoods" className="block px-2 py-1 hover:text-gray-300">All Foods</Link>
             <Link to="/singlefood" className="block px-2 py-1 hover:text-gray-300">Single Food</Link>
-            <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link>
+            {/* <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link> */}
+            {user && (
+  <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link>
+)}
+
             <Link to="/gallery" className="block px-2 py-1 hover:text-gray-300">Gallery</Link>
           </div>
 
@@ -222,3 +226,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+// this code is correct not change my code i want if user login or register than show the  Food Purchase outher wise not show 
