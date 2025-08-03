@@ -184,9 +184,9 @@ const NavBar = () => {
             <Link to="/allfoods" className="block px-2 py-1 hover:text-gray-300">All Foods</Link>
             <Link to="/singlefood" className="block px-2 py-1 hover:text-gray-300">Single Food</Link>
             {/* <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link> */}
-            {user && (
+            {/* {user && (
   <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link>
-)}
+)} */}
 
             <Link to="/gallery" className="block px-2 py-1 hover:text-gray-300">Gallery</Link>
           </div>
