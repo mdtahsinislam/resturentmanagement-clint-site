@@ -2,7 +2,7 @@ import React from 'react';
 
 const Chafe = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Left Section: Chef Image and Food Preparation */}
                 <div className="relative">
@@ -22,7 +22,7 @@ const Chafe = () => {
                 </div>
 
                 {/* Right Section: Text Content and Benefits */}
-                <div className="text-gray-800 space-y-8">
+                <div className="text-base-content space-y-8">
                         <div className="text-gray-800 space-y-8">
   <p
     className="text-orange-500 font-semibold text-xl md:text-4xl"
@@ -56,7 +56,7 @@ const Chafe = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-gray-900">Quiet Environment</h3>
-                                <p className="text-gray-600">Objectively transition virtual functionalities via enterprise-wide benefits.</p>
+                                <p className="text-cyan-500">Objectively transition virtual functionalities via enterprise-wide benefits.</p>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@ const Chafe = () => {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-gray-900">Hygienic Food</h3>
-                                <p className="text-gray-600">Objectively transition virtual functionalities via enterprise-wide benefits.</p>
+                                <p className="text-cyan-500">Objectively transition virtual functionalities via enterprise-wide benefits.</p>
                             </div>
                         </div>
                     </div>

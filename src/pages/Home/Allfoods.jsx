@@ -86,7 +86,7 @@ const Allfoods = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div
-        className="h-20 flex items-center justify-center bg-cover bg-center mt-3"
+        className="h-20 flex items-center justify-center bg-cover bg-center mt-20"
         style={{ backgroundImage: "url('https://i.imghippo.com/files/WyCQ3571ntg.jpg')" }}
       >
         <h1 className="text-white text-3xl font-bold">All Foods</h1>

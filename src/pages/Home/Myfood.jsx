@@ -46,7 +46,7 @@ const Myfood = () => {
   }, [user]);
 
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div className='max-w-7xl mx-auto mt-20'>
       <div
         className="h-20 flex items-center justify-center bg-cover bg-center mt-3"
         style={{ backgroundImage: "url('https://i.imghippo.com/files/WyCQ3571ntg.jpg')" }}

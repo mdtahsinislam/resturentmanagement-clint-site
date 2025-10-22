@@ -128,12 +128,121 @@
 // export default NavBar;
 // //please do this responsive for any device
 
+
+// import React, { useContext, useState } from 'react';
+// import { FaUserCircle } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+// import { AuthContext } from '../../contexts/AuthContext';
+
+// const NavBar = ({ toggleTheme, theme }) => {
+//   const { user, logOut } = useContext(AuthContext);
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const handleLogOut = () => {
+//     logOut()
+//       .then(() => console.log('User logged out'))
+//       .catch(err => console.error(err));
+//   };
+
+//   return (
+//     <div className="   fixed top-0 left-0 w-full z-50 bg-base-100 shadow-lg">
+//       <div className="max-w-7xl text-base-content mx-auto px-4 py-3 flex justify-between items-center flex-wrap">
+//         {/* Logo and Brand */}
+//         <div className="flex items-center gap-2">
+//           <img className="w-12 h-12" src="https://i.ibb.co/6cGPgK0z/IMG-20250708-213512.jpg" alt="Logo" />
+//           <h1 className=" font-bold text-xl">Restaurant Management</h1>
+//         </div>
+
+//         {/* Hamburger Icon */}
+//         <div className="md:hidden">
+//           <button
+//             onClick={() => setIsMenuOpen(!isMenuOpen)}
+//             className=" focus:outline-none"
+//           >
+//             <svg
+//               className="w-6 h-6 mr-3 "
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               {isMenuOpen ? (
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+//               ) : (
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+//               )}
+//             </svg>
+//           </button>
+//         </div>
+
+//         {/* Nav Links */}
+//         <div
+//           className={`w-full md:flex md:items-center md:w-auto ${
+//             isMenuOpen ? 'block' : 'hidden'
+//           }`}
+//         >
+//           <div className="text-base-content font-semibold md:flex md:space-x-6 mt-4 md:mt-0 ">
+//             <Link to="/" className="block px-2 py-1   hover:text-cyan-700">Home</Link>
+//             <Link to="/allfoods" className="block px-2 py-1  hover:text-cyan-700">All Foods</Link>
+//             {/* <Link to="/singlefood" className="block px-2 py-1 hover:text-gray-300">Single Food</Link> */}
+//             {/* <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link> */}
+//             {/* {user && (
+//   <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link>
+// )} */}
+
+//             <Link to="/gallery" className="block px-2 py-1 hover:text-cyan-700">Gallery</Link>
+//              <Link to="/branch" className="block px-2 py-1 hover:text-cyan-700">Branch</Link>
+//              <Link to="/fooddelivery" className="block px-2 py-1 hover:text-cyan-700">Food-Delivery</Link>
+//                   {/* <input type="checkbox" value="synthwave" className="toggle theme-controller" /> */}
+//                   <input
+//   type="checkbox"
+//   className="toggle theme-controller"
+//   checked={theme === 'dark'}
+//   onChange={toggleTheme}
+// />
+
+//           </div>
+
+//           {/* Auth/User */}
+//           <div className="mt-4 md:mt-0 md:ml-6 flex flex-col md:flex-row items-center gap-3">
+//             {user ? (
+//               <>
+//                 <div className="dropdown dropdown-end ">
+//                   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+//                     <div className="w-10 rounded-full">
+//                       <img src={user.photoURL || 'https://i.ibb.co/VB4D0sH/user.png'} alt="User" />
+//                     </div>
+//                   </div>
+//                   <ul
+//                     tabIndex={0}
+//                     className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base-content font-bold"
+//                   >
+//                     <li><Link to="/addfood">Add Food</Link></li>
+//                     <li><Link to="/myfood">My Food</Link></li>
+//                     <li><Link to="/myorder">My Order</Link></li>
+//                   </ul>
+//                 </div>
+//                 <button onClick={handleLogOut} className="btn btn-sm btn-neutral">Logout</button>
+//               </>
+//             ) : (
+//               <>
+//                 <Link to="/login"><button className="btn btn-sm btn-neutral">Login</button></Link>
+//                 <Link to="/register"><button className="btn btn-sm btn-neutral">Register</button></Link>
+//               </>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default NavBar;
+
 import React, { useContext, useState } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
-const NavBar = () => {
+const NavBar = ({ toggleTheme, theme }) => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -144,22 +253,22 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-[#10898d] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center flex-wrap">
-        {/* Logo and Brand */}
+    <div className="wrap fixed top-0 left-0 w-full z-50 bg-base-100 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+        {/* Logo */}
         <div className="flex items-center gap-2">
-          <img className="w-12 h-12" src="https://i.ibb.co/6cGPgK0z/IMG-20250708-213512.jpg" alt="Logo" />
-          <h1 className="text-white font-bold text-xl">Restaurant Management</h1>
+          <img className="w-12 h-12 object-cover rounded-full" src="https://i.ibb.co/6cGPgK0z/IMG-20250708-213512.jpg" alt="Logo" />
+          <h1 className="font-bold text-xl">Restaurant Management</h1>
         </div>
 
-        {/* Hamburger Icon */}
+        {/* Hamburger for mobile */}
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white focus:outline-none"
+            className="focus:outline-none"
           >
             <svg
-              className="w-6 h-6"
+              className="w-6 h-6 text-base-content mr-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -175,20 +284,20 @@ const NavBar = () => {
 
         {/* Nav Links */}
         <div
-          className={`w-full md:flex md:items-center md:w-auto ${
-            isMenuOpen ? 'block' : 'hidden'
-          }`}
+          className={`w-full md:flex md:items-center md:w-auto ${isMenuOpen ? 'block' : 'hidden'}`}
         >
-          <div className="text-white font-semibold md:flex md:space-x-6 mt-4 md:mt-0">
-            <Link to="/" className="block px-2 py-1 hover:text-gray-300">Home</Link>
-            <Link to="/allfoods" className="block px-2 py-1 hover:text-gray-300">All Foods</Link>
-            <Link to="/singlefood" className="block px-2 py-1 hover:text-gray-300">Single Food</Link>
-            {/* <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link> */}
-            {/* {user && (
-  <Link to="/foodpurchase" className="block px-2 py-1 hover:text-gray-300">Food Purchase</Link>
-)} */}
-
-            <Link to="/gallery" className="block px-2 py-1 hover:text-gray-300">Gallery</Link>
+          <div className="flex flex-col md:flex-row md:space-x-6 text-base-content font-semibold mt-4 md:mt-0">
+            <Link to="/" className="px-2 py-1 hover:text-cyan-700">Home</Link>
+            <Link to="/allfoods" className="px-2 py-1 hover:text-cyan-700">All Foods</Link>
+            <Link to="/gallery" className="px-2 py-1 hover:text-cyan-700">Gallery</Link>
+            <Link to="/branch" className="px-2 py-1 hover:text-cyan-700">Branch</Link>
+            <Link to="/fooddelivery" className="px-2 py-1 hover:text-cyan-700">Food-Delivery</Link>
+            <input
+              type="checkbox"
+              className="toggle mt-2 md:mt-0"
+              checked={theme === 'dark'}
+              onChange={toggleTheme}
+            />
           </div>
 
           {/* Auth/User */}
@@ -203,7 +312,7 @@ const NavBar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black font-bold"
+                    className="menu dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-bold"
                   >
                     <li><Link to="/addfood">Add Food</Link></li>
                     <li><Link to="/myfood">My Food</Link></li>
@@ -226,4 +335,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-// this code is correct not change my code i want if user login or register than show the  Food Purchase outher wise not show 

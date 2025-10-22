@@ -20,33 +20,35 @@ const Topfood = () => {
             });
     }, []);
 
+    //  backgroundColor: '#ffffff',
     return (
         <div style={{
-            backgroundColor: '#ffffff',
+           
             padding: '80px 20px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center'
         }}>
-            <h2 style={{
+            <h2  style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: '48px',
-                color: '#333333',
+              color: 'var(--b1)',
                 marginBottom: '20px',
                 fontWeight: 'bold'
             }}>
                 Fresh Ingredient, Tasty Meals
             </h2>
 
-            <img className='w-20' src="https://i.ibb.co/T6P1fz5/leaffff.jpg" alt="" />
+            <img className='w-20' src="https://i.ibb.co.com/j93P6fQY/leaffff-removebg-preview.png" alt="" />
 
-            <p style={{
+            <p className='text-base-content' style={{
                 fontFamily: 'Arial, sans-serif',
                 fontSize: '16px',
-                color: '#666666',
+                color: 'var(--b1)',
                 maxWidth: '700px',
-                lineHeight: '1.6'
+                lineHeight: '1.6',
+                
             }}>
                 Everyone has taste, even if they don't realize it...
             </p>

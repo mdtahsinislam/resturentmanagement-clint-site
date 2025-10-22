@@ -1,0 +1,24 @@
+[
+  {
+    "district": "Dhaka",
+    "riders": [
+      { "name": "Rider 1", "phone": "017xxxxxxxx", "lat": 23.8103, "lng": 90.4125 },
+      { "name": "Rider 2", "phone": "018xxxxxxxx", "lat": 23.7900, "lng": 90.4070 },
+      { "name": "Rider 3", "phone": "019xxxxxxxx", "lat": 23.8200, "lng": 90.4000 }
+    ]
+  },
+  {
+    "district": "Chittagong",
+    "riders": [
+      { "name": "Rider 4", "phone": "017xxxxxxxx", "lat": 22.3569, "lng": 91.7832 },
+      { "name": "Rider 5", "phone": "018xxxxxxxx", "lat": 22.3300, "lng": 91.7900 }
+    ]
+  },
+  {
+    "district": "Sylhet",
+    "riders": [
+      { "name": "Rider 6", "phone": "019xxxxxxxx", "lat": 24.8949, "lng": 91.8687 },
+      { "name": "Rider 7", "phone": "017xxxxxxxx", "lat": 24.9000, "lng": 91.8700 }
+    ]
+  }
+]

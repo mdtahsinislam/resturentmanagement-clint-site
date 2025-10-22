@@ -20,14 +20,14 @@ const Singlefood = () => {
   if (!food) return <div>Loading...</div>;
 
   return (
-    <div className="p-8 max-w-xl mx-auto bg-white shadow-md rounded-md">
+    <div className="p-8 max-w-xl mx-auto mt-14 shadow-lg rounded-md">
       <img src={food.foodUrl} alt={food.foodName} className="w-full h-64 object-cover rounded" />
       <h2 className="text-3xl font-bold mt-4">{food.foodName}</h2>
-      <p className="text-lg text-gray-700 mt-2">Price: ${food.price}</p>
-      <p className="text-md text-gray-600 mt-1">Quantity: {food.quantity}</p>
-      <p className="text-md text-gray-600 mt-1">Buyer: {food.buyerName}</p>
-      <p className="text-md text-gray-600 mt-1">Email: {food.email}</p>
-      <p className="text-md text-gray-600 mt-1">Purchase Date: {food.buyingDate}</p>
+      <p className="text-lg  mt-2">Price: ${food.price}</p>
+      <p className="text-md  mt-1">Quantity: {food.quantity}</p>
+      <p className="text-md  mt-1">Buyer: {food.buyerName}</p>
+      <p className="text-md  mt-1">Email: {food.email}</p>
+      <p className="text-md  mt-1">Purchase Date: {food.buyingDate}</p>
       <p className="text-md font-semibold mt-2">Purchase Count: {food.purchaseCount || 0}</p>
 
       {/* <p className="text-md font-semibold mt-2">Purchase Count: 0</p>  */}

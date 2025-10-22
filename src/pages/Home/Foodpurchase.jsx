@@ -102,45 +102,92 @@ import { AuthContext } from '../../contexts/AuthContext';
 const Foodpurchase = () => {
   const { user } = useContext(AuthContext);
 
+  // const handelAddfoodpurchase = (e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const formData = new FormData(form);
+  //   const foodData = Object.fromEntries(formData.entries());
+
+  //   // Inject logged-in user data manually (in case form field is tampered)
+  //   foodData.buyerName = user?.displayName || 'Unknown';
+  //   foodData.email = user?.email || 'No Email';
+
+  //   console.log(foodData);
+
+  //   fetch(' https://resturent-management-server-site.vercel.app/foodpurchasess', {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify(foodData)
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data.insertedId) {
+  //         Swal.fire({
+  //           position: "top-end",
+  //           icon: "success",
+  //           title: "Your purchase has been saved!",
+  //           showConfirmButton: false,
+  //           timer: 1500
+  //         });
+  //         form.reset();
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.error('Error:', err);
+  //     });
+  // };
+
   const handelAddfoodpurchase = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const foodData = Object.fromEntries(formData.entries());
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const foodData = Object.fromEntries(formData.entries());
 
-    // Inject logged-in user data manually (in case form field is tampered)
-    foodData.buyerName = user?.displayName || 'Unknown';
-    foodData.email = user?.email || 'No Email';
+  // Inject logged-in user data
+  foodData.buyerName = user?.displayName || 'Unknown';
+  foodData.email = user?.email || 'No Email';
 
-    console.log(foodData);
+  fetch('https://resturent-management-server-site.vercel.app/foodpurchasess', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(foodData)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.insertedId) {
+        let message = "Your purchase has been saved!";
 
-    fetch(' https://resturent-management-server-site.vercel.app/foodpurchasess', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(foodData)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your purchase has been saved!",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          form.reset();
+        if (data.emailSent) {
+          message += " ✅ Confirmation email sent!";
+        } else {
+          message += " ⚠️ Email notification failed!";
         }
-      })
-      .catch(err => {
-        console.error('Error:', err);
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: message,
+          showConfirmButton: false,
+          timer: 2000
+        });
+
+        form.reset();
+      }
+    })
+    .catch(err => {
+      console.error('Error:', err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Failed to add purchase',
+        text: err.message || 'Please try again',
       });
-  };
+    });
+};
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen mt-8">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <form onSubmit={handelAddfoodpurchase} className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">

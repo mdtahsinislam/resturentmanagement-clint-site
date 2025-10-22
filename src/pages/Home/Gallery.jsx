@@ -25,7 +25,7 @@ const Gallery = () => {
         
         { src: "https://i.imghippo.com/files/qj8596GHw.jpg" },
         { src: "https://i.imghippo.com/files/az8456iAE.jpg" },
-       {src:"https://i.imghippo.com/files/dfY1723sog.jpg"},
+       {src:"https://i.ibb.co.com/GfWK2SFj/beef-curry.jpg"},
        {src:"https://i.imghippo.com/files/nZEH2550nQw.jpg"},
        {src:"https://i.imghippo.com/files/sbn4421XkE.jpg"},
        {src:"https://i.imghippo.com/files/yJW1096IY.jpg"},
@@ -46,10 +46,10 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto  ">
                 {/* ব্যানার সেকশন */}
                 <div
-                    className="h-20 flex items-center justify-center bg-cover bg-center mt-3"
+                    className="h-20 flex items-center justify-center bg-cover bg-center mt-20"
                     style={{ backgroundImage: "url('https://i.imghippo.com/files/lnsg5986qY.jpg')" }}
                 >
                     <h1 className="text-white text-3xl font-bold">Gallery</h1>

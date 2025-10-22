@@ -45,7 +45,7 @@ import React from 'react';
 
 const Offer = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-gray-100 py-12">
+    <div className="relative w-full overflow-hidden text-base-content py-12">
       <section className="max-w-7xl mx-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center justify-center relative rounded-lg shadow-lg overflow-hidden px-4 sm:px-6">
         {/* Background Image */}
         <img

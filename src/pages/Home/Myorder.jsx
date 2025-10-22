@@ -47,7 +47,7 @@ const Myorder = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4">
+    <div className="max-w-7xl mx-auto p-4 mt-20">
       <h2
         className="text-orange-500 font-semibold text-2xl sm:text-3xl md:text-4xl mt-1 mb-5 leading-8 tracking-tight text-center"
         style={{ fontFamily: '"My Soul", cursive' }}
@@ -58,7 +58,7 @@ const Myorder = () => {
       <div className="overflow-x-auto rounded-lg border border-gray-200">
         <table className="table w-full text-sm sm:text-base">
           <thead>
-            <tr className="bg-[#D3ECCD] shadow-md text-xs sm:text-sm md:text-base">
+            <tr className="bg-cyan-900 shadow-md text-xs sm:text-sm md:text-base">
               <th className="py-2 px-2">#</th>
               <th className="py-2 px-2">Food</th>
               <th className="py-2 px-2">Image</th>
@@ -71,7 +71,7 @@ const Myorder = () => {
           <tbody>
             {orders.length > 0 ? (
               orders.map((order, index) => (
-                <tr key={order._id} className="hover:bg-gray-100 text-center">
+                <tr key={order._id} className=" text-center">
                   <td className="p-2">{index + 1}</td>
                   <td className="p-2">{order.foodName}</td>
                   <td className="p-2">

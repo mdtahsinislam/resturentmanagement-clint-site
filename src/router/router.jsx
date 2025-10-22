@@ -15,6 +15,8 @@ import Login from "../pages/Home/Login";
 import Register from "../pages/Home/Register";
 import UpdateFood from "../pages/Home/UpdateFood";
 import PrivateRoute from "./PrivateRoute";
+import Branch from "../pages/Home/Branch";
+import Fooddelivery from "../pages/Home/Fooddelivery";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -68,6 +70,22 @@ const router = createBrowserRouter([
             <Myorder />
           </PrivateRoute>
         ),
+    },
+    {
+      path:"/branch",
+       element: (<PrivateRoute><Branch></Branch></PrivateRoute>),
+         
+            
+          
+        
+    },
+    {
+      path:"/fooddelivery",
+       element: (<PrivateRoute><Fooddelivery></Fooddelivery></PrivateRoute>),
+         
+            
+          
+        
     },
     {
       path:"/singlefood/:id",
